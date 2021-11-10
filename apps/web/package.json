@@ -2,6 +2,7 @@
   "name": "@test-graneet/web",
   "private": true,
   "scripts": {
+    "boot": "./scripts/boot.sh",
     "dev": "next dev --port 4000",
     "build": "next build",
     "start": "next start",

@@ -1,13 +1,17 @@
 {
   "name": "test-graneet",
   "scripts": {
+    "api": "pnpm --filter @test-graneet/api",
+    "web": "pnpm --filter @test-graneet/web",
+    "db": "pnpm --filter @test-graneet/db",
+    "boot": "pnpm install && concurrently 'npm:boot:*'",
+    "boot:api": "pnpm --filter @test-graneet/api boot",
+    "boot:web": "pnpm --filter @test-graneet/web boot",
+    "boot:db": "pnpm --filter @test-graneet/db boot",
     "dev": "concurrently 'npm:dev:*'",
     "dev:api": "pnpm --filter @test-graneet/api dev",
     "dev:web": "pnpm --filter @test-graneet/web dev",
-    "dev:db": "pnpm --filter @test-graneet/db dev",
-    "api": "pnpm --filter @test-graneet/api",
-    "web": "pnpm --filter @test-graneet/web",
-    "db": "pnpm --filter @test-graneet/db"
+    "dev:db": "pnpm --filter @test-graneet/db dev"
   },
   "devDependencies": {
     "concurrently": "^6.3.0"

@@ -2,6 +2,7 @@
   "name": "@test-graneet/api",
   "private": true,
   "scripts": {
+    "boot": "./scripts/boot.sh",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

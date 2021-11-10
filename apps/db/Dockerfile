@@ -1,3 +1,3 @@
 FROM postgres
 
-COPY ./scripts /docker-entrypoint-initdb.d
+COPY ./scripts/init.sql /docker-entrypoint-initdb.d/
