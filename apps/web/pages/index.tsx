@@ -18,6 +18,8 @@ export default function Home() {
     { use: [laggy] }
   );
 
+  if (error) return <span>Are your sure the API is running?</span>;
+
   return (
     <div className={styles.container}>
       <div className={styles.searchContainer}>
