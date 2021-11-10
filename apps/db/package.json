@@ -1,7 +1,7 @@
 {
   "name": "@test-graneet/db",
   "scripts": {
-    "boot": "docker-compose build db",
+    "boot": "pnpm start",
     "dev": "pnpm start",
     "start": "docker-compose up -d db",
     "reset": "docker-compose stop db && docker-compose rm && rimraf ./tmp && pnpm start"
