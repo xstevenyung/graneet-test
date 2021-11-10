@@ -1,0 +1,7 @@
+{
+  "name": "test-graneet",
+  "scripts": {
+    "api": "pnpm --filter @test-graneet/api",
+    "db": "pnpm --filter @test-graneet/db"
+  }
+}
