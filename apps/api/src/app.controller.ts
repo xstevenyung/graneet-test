@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Req } from '@nestjs/common';
+import type { Request } from 'express';
 import { PrismaService } from './prisma.service';
 import { City } from '@prisma/client';
 
@@ -7,8 +8,20 @@ export class AppController {
   constructor(private readonly prismaService: PrismaService) {}
 
   @Get()
-  async index(): Promise<{ metropolis: City[]; overseas: City[] }> {
+  async index(
+    @Req() req: Request,
+  ): Promise<{ metropolis: City[]; overseas: City[] }> {
     const cities = await this.prismaService.city.findMany({
+      where: {
+        ...(req.query.q
+          ? {
+              municipalityName: {
+                contains: `${req.query.q}`,
+                mode: 'insensitive',
+              },
+            }
+          : {}),
+      },
       take: 100,
       orderBy: {
         municipalityName: 'asc',
@@ -18,6 +31,7 @@ export class AppController {
     const metropolis = [];
     const overseas = [];
 
+    // https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/
     for (let i = 0; i < cities.length; i++) {
       const city = cities[i];
 
