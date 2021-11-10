@@ -1,0 +1,12 @@
+.container {
+  background-color: rgba(22, 28, 41, 0.63);
+  padding: 20px 14px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zipCode {
+  color: rgba(140, 143, 154, 1);
+}

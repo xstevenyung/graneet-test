@@ -1,0 +1,17 @@
+.container {
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.success {
+  background-color: rgba(57, 187, 55, 0.63);
+}
+
+.error {
+  background-color: rgba(187, 55, 55, 0.63);
+}

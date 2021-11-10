@@ -1,0 +1,23 @@
+.container {
+  background-color: var(--primary-color);
+  border-radius: var(--roundness);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 35px;
+  padding-left: 35px;
+}
+
+.title {
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+.resultListContainer {
+  padding-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 33px;
+  row-gap: 25px;
+}
