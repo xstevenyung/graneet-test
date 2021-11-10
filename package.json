@@ -1,7 +1,15 @@
 {
   "name": "test-graneet",
   "scripts": {
+    "dev": "concurrently 'npm:dev:*'",
+    "dev:api": "pnpm --filter @test-graneet/api dev",
+    "dev:web": "pnpm --filter @test-graneet/web dev",
+    "dev:db": "pnpm --filter @test-graneet/db dev",
     "api": "pnpm --filter @test-graneet/api",
+    "web": "pnpm --filter @test-graneet/web",
     "db": "pnpm --filter @test-graneet/db"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
   }
 }
